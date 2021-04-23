@@ -17,11 +17,13 @@ section
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(172.19deg, rgba(255, 255, 255, 0) 31.35%, rgba(252, 241, 201, 0.590909) 62.01%, #FAE7A3 92.01%), linear-gradient(108.13deg, #FFBBF8 35%, rgba(255, 236, 253, 0.28125) 84.56%, rgba(255, 255, 255, 0) 99.3%), linear-gradient(108.95deg, #48FFDE 63.78%, #48FFDE 83.9%, rgba(255, 255, 255, 0) 96.77%);;
+    background: linear-gradient(172.19deg, rgba(255, 255, 255, 0) 31.35%, rgba(252, 241, 201, 0.590909) 62.01%, #FAE7A3 92.01%), linear-gradient(108.13deg, #FFBBF8 35%, rgba(255, 236, 253, 0.28125) 84.56%, rgba(255, 255, 255, 0) 99.3%), linear-gradient(108.95deg, #48FFDE 63.78%, #48FFDE 83.9%, rgba(255, 255, 255, 0) 96.77%);
+  
 }
 
 header
 {
+    font-size: 25px;
     position: absolute;
     top: 10px;
     left: 0;
@@ -90,13 +92,14 @@ header ul li a
 
 .content .textBox p
 {
+    font-size: 22px;
     color: #333;
 }
 
 .content .textBox a
 {
     display: inline-block;
-    padding: 10px 150px;
+    padding: 15px 180px;
     margin-top: 20px;
     background: #B175FF;
     border-radius: 40px;
@@ -246,7 +249,7 @@ header ul li a
 
     .content .textBox h2
     {
-        font-size: 2.5em;
+        font-size: 40px;
         margin-bottom: 15px;
         padding-bottom: 20px;  
 
@@ -255,6 +258,19 @@ header ul li a
     .content .textBox 
     {
         max-width: 60%;   
+    }
+    .content .textBox a
+    {
+        display: inline-block;
+        padding: 12px 120px;
+        margin-top: 20px;
+        background: #B175FF;
+        border-radius: 40px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-decoration: none;
+        color: #fff;
+        text-align: center;
     }
 
     .content .imgBox
@@ -265,10 +281,12 @@ header ul li a
 
     .content .imgBox img
     {
-        max-width:450px;
+        max-width:400px;
+        position: relative;
+        margin-left: 25%;
         
     }
-@media (max-width: 500px) 
+@media (max-width: 550px) 
     {
         body 
         {
@@ -312,12 +330,14 @@ header ul li a
         {
             padding: 20px;
             margin: 20px;
-            position: fixed;
+            position: relative;
             right: 20px;
             background: url(close.png);
             background-size: 25px;
             background-position: center;
             background-repeat: no-repeat;
+            overflow: hidden;
+
         }
     
         header ul.navigation.active
@@ -335,6 +355,8 @@ header ul li a
             background-color: #fff;
             z-index: 10;
             font-size: 50px;
+            overflow: hidden;
+        
             
         }
     
@@ -359,9 +381,10 @@ header ul li a
         {
             flex-direction: column;
             margin-top: 100px;
+            
         }
     
-        .textBox h2
+        .content .textBox h2
         {
             font-size: 2.5em;
             margin-bottom: 15px;
@@ -369,28 +392,39 @@ header ul li a
     
         }
     
-        .textBox 
+        .content .textBox 
         {
             max-width: 100%;   
         }
 
-        .textBox a 
+        .content .textBox a
         {
-            max-width: 100%;   
+            display: inline-block;
+            padding: 10px 100px;
+            margin-top: 20px;
+            background: #B175FF;
+            border-radius: 40px;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: #fff;
+            text-align: center;
         }
     
     
-        .imgBox
+        .content .imgBox
         {
-            max-width: 100%;
+            margin-right: 25%;
             justify-content: center;
-         
+           
             
         }
     
-        .imgBox img
+        .content .imgBox img
         {
-            max-width:450px;
+            width:300px;
+            position: relative;
+            margin-left: 25%;
             
         }
     
