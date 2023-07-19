@@ -31,7 +31,7 @@
         </header>
   
 
-   <style>
+  <style>
         body {
             margin: 0;
             height: 100vh;
@@ -49,9 +49,9 @@
             font-size: 18px;
             color: black;
             padding: 24px;
-            background-color: white;
             border-radius: 8px;
-            box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px); /* Add the glassmorphism effect */
+            background-color: rgba(255, 255, 255, 0.5); /* Set a transparent white background */
             width: 70%; /* Set the width to 70% of the viewport */
             max-width: 400px; /* Limit the max width for larger screens */
         }
@@ -89,40 +89,32 @@
     </style>
 </head>
 <body>
-    <form action="https://submit-form.com/6ivnhRR6">
-        <input type="hidden" name="_redirect" value="https://submit-form.com/6ivnhRR6" />
+    <section>
+        <header>
+            <!-- Your header content here -->
+        </header>
 
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" placeholder="Name" required />
+        <div style="display: flex; justify-content: center;">
+            <form action="https://submit-form.com/6ivnhRR6">
+                <input type="hidden" name="_redirect" value="https://submit-form.com/6ivnhRR6" />
 
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" placeholder="Email" required />
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Name" required />
 
-        <input type="submit" value="Submit" />
-    </form>
-</body>
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="Email" required />
 
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    </section>
 
+    <footer>
+        <p>2023 Grabliy Tech.<br></p>
+    </footer>
 
-
-<body>        
- </section>
-<footer>
-    <p>2023 Grabliy Tech.<br>
-    </p>
-  </footer>
-  
- <script type="text/javascript"> 
-    function imgSlider(anything){
-        document.querySelector('.starbucks').src = anything;
-    }  
-    function toggleMenu(){
-        var menuToggle = document.querySelector('.toggle')
-        var navigation = document.querySelector('.navigation')
-        menuToggle.classList.toggle('active')
-        navigation.classList.toggle('active')
-    
-    }
-</script>
+    <script type="text/javascript"> 
+        
+    </script>
 </body>
 </html>
