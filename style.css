@@ -448,7 +448,7 @@ form {
     backdrop-filter: blur(10px); /* Add the glassmorphism effect */
     background-color: rgba(255, 255, 255, 0.5); /* Set a transparent white background */
     width: 70%; /* Set the width to 70% of the viewport */
-    max-width: 250px; /* Limit the max width for larger screens */
+    max-width: 400px; /* Limit the max width for larger screens */
 }
 
 form label {
