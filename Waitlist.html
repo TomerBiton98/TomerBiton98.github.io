@@ -15,6 +15,86 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,  maximum-scale=1.0, user-scalable=no" />
+    <style>
+        /* Add custom styles for the form */
+        .form-container {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 400px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .form-container input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #5bbad5;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #489fb5;
+        }
+         body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0; /* Set a background color for better visualization */
+        }
+
+        .form-container {
+            /* Glassmorphism effect */
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .form-container label {
+            /* Styles for labels... */
+        }
+
+        .form-container input[type="text"] {
+            /* Styles for input fields... */
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #9c27b0; /* Purple color for the button */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out; /* Hover transition */
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #7b1fa2; /* Darker purple on hover */
+        }
+    </style>
 </head>
 <body>
     <section>
