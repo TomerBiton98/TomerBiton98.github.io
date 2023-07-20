@@ -22,7 +22,7 @@
             padding: 40px;
             border-radius: 10px;
             margin: 30px auto;
-            max-width: 200px;
+            max-width: 400px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
@@ -52,7 +52,8 @@
         .form-container input[type="submit"]:hover {
             background-color: #489fb5;
         }
-         body {
+
+        body {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -94,10 +95,11 @@
         .form-container input[type="submit"]:hover {
             background-color: #7b1fa2; /* Darker purple on hover */
         }
-          @media (max-width: 250px) {
+
+        /* Mobile responsiveness */
+        @media (max-width: 600px) {
             .form-container {
-                width: 65%; /* Adjust width for smaller screens */
-                padding: 15px;
+                width: 80%; /* Adjust width for smaller screens */
             }
         }
     </style>
@@ -131,11 +133,14 @@
         </div>
     </section>
 
-
+    <footer>
+        <p>2023 Grabliy Tech.<br>
+        </p>
+    </footer>
 
     <script type="text/javascript"> 
         function imgSlider(anything){
-            document.querySelector('.info').src = anything;
+            document.querySelector('.starbucks').src = anything;
         }  
         function toggleMenu(){
             var menuToggle = document.querySelector('.toggle')
