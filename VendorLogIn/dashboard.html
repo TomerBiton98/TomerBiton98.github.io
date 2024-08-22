@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Grabliy Supermarket Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <a href="dashboard.html"><img src="logo.png" alt="Grabliy Logo"></a>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#" onclick="showPage('dashboard')">Dashboard</a></li>
+                <li><a href="#" onclick="showPage('products')">Products</a></li>
+                <li><a href="#" onclick="showPage('sales')">Sales</a></li>
+                <li><a href="#" onclick="showPage('customers')">Customers</a></li>
+                <li><a href="#" onclick="showPage('analytics')">Analytics</a></li>
+                <li><a href="#" onclick="showPage('reports')">Reports</a></li>
+                <li><a href="#" onclick="showPage('user-management')">User Management</a></li>
+                <li><a href="login.html">LogOut</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="content">
+        <!-- Dashboard Section -->
+        <section id="dashboard" class="page active">
+            <h2>Dashboard</h2>
+
+
+            <div class="task-widget">
+                
+            <!-- Dropdown Menus for Adding/Removing Stat Cards and Graphs -->
+            <div class="dropdown">
+                <button class="dropbtn">Stat Cards</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="toggleElement('total-sales-card')">Total Sales</a>
+                    <a href="#" onclick="toggleElement('total-products-card')">Total Products In Stock</a>
+                    <a href="#" onclick="toggleElement('total-products-sold-card')">Total Products Sold</a>
+                    <a href="#" onclick="toggleElement('waste-reduction-card')">Waste Reduction</a>
+                    <a href="#" onclick="toggleElement('inventory-turnover-card')">Inventory Turnover Ratio</a>
+                    <a href="#" onclick="toggleElement('customer-satisfaction-card')">Customer Satisfaction</a>
+                    <a href="#" onclick="toggleElement('operating-profit-card')">Operating Profit</a>
+                    <a href="#" onclick="toggleElement('co2-prevention-card')">CO2 Emissions Prevented</a>
+                    <a href="#" onclick="toggleElement('average-order-value-card')">Average Order Value</a>
+                    <a href="#" onclick="toggleElement('stock-health-card')">Stock Health</a>
+                    <a href="#" onclick="toggleElement('customer-retention-card')">Customer Retention</a>
+                    <a href="#" onclick="toggleElement('sales-growth-card')">Sales Growth</a>
+                    </div>
+
+                    
+                    
+                
+            </div>
+            <div class="dropdown">
+                <button class="GraphBtn">Graph Cards</button>
+                <div class="dropdown-content">
+                    <a href="#" onclick="toggleElement('sales-chart-card')">Sales Over Time</a>
+                    <a href="#" onclick="toggleElement('customer-demographics-chart-card')">Customer Demographics</a>
+                    <a href="#" onclick="toggleElement('regional-performance-chart-card')">Sales by Region</a>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid" id="stat-card-container">
+                <!-- Existing Stat Cards -->
+                <div id="total-sales-card" class="stat-card" >
+                    <button class="remove-btn" onclick="removeCard('total-sales-card')">Remove</button>
+                    <h3>Total Sales</h3>
+                    <p id="Total" ><span id="total-sales-amount1"></span></p>
+                    <small class="stat-description">Compared to last month: <span id="sales-trend" class="trend-up">+10%</span></small>
+                    
+                </div>
+                
+                <div id="total-products-card" class="stat-card" > 
+                    <button class="remove-btn" onclick="removeCard('total-products-card')">Remove</button>
+                    <h3>Total Products In Stock</h3>
+                    <p id="total-products">72,594</p>
+                    <small class="stat-description">Available across all stores</small>
+                </div>
+                
+                <div id="total-products-sold-card" class="stat-card">
+                    <button class="remove-btn" onclick="removeCard('total-products-sold-card')">Remove</button>
+                    <h3>Total Products Sold</h3>
+                    <p id="total-products-sold">15,543</p>
+                    <small class="stat-description">Compared to last month: <span id="products-sold-trend" class="trend-down">-5%</span></small>
+                </div>
+                
+                <div id="waste-reduction-card" class="stat-card" style="display:none">
+                    <button class="remove-btn" onclick="removeCard('waste-reduction-card')">Remove</button>
+                    <h3>Waste Reduction</h3>
+                    <p id="waste-reduction">35%</p>
+                    <small class="stat-description">Waste reduction goal for the year: 40%</small>
+                </div>
+                
+                <div id="inventory-turnover-card" class="stat-card" style="display:none">
+                    <button class="remove-btn" onclick="removeCard('inventory-turnover-card')">Remove</button>
+                    <h3>Inventory Turnover Ratio</h3>
+                    <p id="inventory-turnover">7.5</p>
+                    <small class="stat-description">Number of times inventory sold out</small>
+                </div>
+                
+                <div id="customer-satisfaction-card" class="stat-card" style="display:none">
+                    <button class="remove-btn" onclick="removeCard('customer-satisfaction-card')">Remove</button>
+                    <h3>Customer Satisfaction</h3>
+                    <p id="customer-satisfaction">89%</p>
+                    <small class="stat-description">Based on recent surveys</small>
+                </div>
+                
+                <div id="operating-profit-card" class="stat-card" style="display:none">
+                    <button class="remove-btn" onclick="removeCard('operating-profit-card')">Remove</button>
+                    <h3>Operating Profit</h3>
+                    <p id="operating-profit">$180,000</p>
+                    <small class="stat-description">Profit margin: 25%</small>
+                </div>
+                
+                <div id="co2-prevention-card" class="stat-card" style="display:none">
+                    <button class="remove-btn" onclick="removeCard('co2-prevention-card')">Remove</button>
+                    <h3>CO2 Emissions Prevented</h3>
+                    <p id="co2-prevention">12,345 tons</p>
+                    <small class="stat-description">Sustainability Goal: 50,000 tons by year-end</small>
+                </div>
+                
+                <div id="average-order-value-card" class="stat-card" style="display:none">
+                    <h3>Average Order Value</h3>
+                    <p>$<span id="average-order-value">0.00</span></p>
+                    <small class="stat-description">Average value of customer orders</small>
+                    <button class="remove-btn" onclick="removeCard('average-order-value-card')">Remove</button>
+                </div>
+                
+                <div id="stock-health-card" class="stat-card" style="display:none">
+                    <button class="remove-btn" onclick="removeCard('stock-health-card')">Remove</button>
+                    <h3>Stock Health</h3>
+                    <p><span id="stock-health">0</span>% healthy stock</p>
+                    <small class="stat-description">Percentage of stock in good condition</small>
+                </div>
+                
+                <div id="customer-retention-card" class="stat-card" style="display:none">
+                    <button class="remove-btn" onclick="removeCard('customer-retention-card')">Remove</button>
+                    <h3>Customer Retention</h3>
+                    <p><span id="customer-retention">0</span>% retention rate</p>
+                    <small class="stat-description">Percentage of customers returning</small>
+                </div>
+                
+                <div id="sales-growth-card" class="stat-card" style="display:none">
+                    <button class="remove-btn" onclick="removeCard('sales-growth-card')">Remove</button>
+                    <h3>Sales Growth</h3>
+                    <p><span id="sales-growth">0</span>% sales growth</p>
+                    <small class="stat-description">Growth compared to the previous period</small>
+                </div>
+                
+            
+         
+        </div>
+        
+
+
+        
+        <div class="chart-grid" id="chart-container">
+            <div id="sales-chart-card" class="chart-card" style="display:none">
+                <h3>Sales Over Time</h3>
+                <canvas id="sales-chart"></canvas>
+                <button class="remove-btn" onclick="removeCard('sales-chart-card')">Remove</button>
+            </div>
+
+            <div id="customer-demographics-chart-card" class="chart-card" style="display:none">
+                <h3>Customer Demographics</h3>
+                <canvas id="customer-demographics-chart"></canvas>
+                <button class="remove-btn" onclick="removeCard('customer-demographics-chart-card')">Remove</button>
+            </div>
+
+            <div id="regional-performance-chart-card" class="chart-card" style="display:none">
+                <h3>Sales by Region</h3>
+                <canvas id="regional-performance-chart"></canvas>
+                <button class="remove-btn" onclick="removeCard('regional-performance-chart-card')">Remove</button>
+            </div>
+        </div>
+
+
+        <div class="task-widget">
+            <h3>Task Management</h3>
+            
+            <div id="add-task-form" class="hidden">
+                <form id="task-form">
+                    <label for="taskName">Task Name:</label>
+                    <input type="text" id="taskName" required>
+
+                    <label for="taskAssignee">Assignee:</label>
+                    <select id="taskAssignee">
+                        <option value="John Doe">John Doe</option>
+                        <option value="Jane Smith">Jane Smith</option>
+                    </select>
+
+                    <label for="dueDate">Due Date:</label>
+                    <input type="date" id="dueDate" required>
+
+                    <button type="submit">Add Task</button>
+                </form>
+            </div>
+
+            <div id="task-list"></div>
+        </div>
+        
+    </section>
+
+
+        <!-- Products Section -->
+        <section id="products" class="page">
+            <h2>Products</h2>
+           
+            <button onclick="downloadTableAsExcel('products-table', 'products')">Download as Excel</button>
+
+            <!-- Add Product Form -->
+            <div id="add-product-form" class="hidden">
+                <h3>Add New Product</h3>
+                <form id="product-form">
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" required>
+                    
+                    <label for="category">Category:</label>
+                    <input type="text" id="category" required>
+                    
+                    <label for="originalPrice">Original Price:</label>
+                    <input type="number" id="originalPrice" step="0.01" required>
+                    
+                    <label for="expirationDate">Expiration Date:</label>
+                    <input type="date" id="expirationDate" required>
+                    
+                    <label for="stock">Stock:</label>
+                    <input type="number" id="stock" required>
+                    
+                    <button type="submit">Add Product</button>
+                </form>
+            </div>
+
+            <table id="products-table" class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Category</th>
+                        <th>Original Price</th>
+                        <th>Discounted Price</th>
+                        <th>Stock</th>
+                        <th>Expiration Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="product-list"></tbody>
+            </table>
+        </section>
+
+         <!-- Sales Section -->
+         <section id="sales" class="page">
+            <h2>Sales</h2>
+            <button onclick="downloadTableAsExcel('sales-table', 'sales')">Download as Excel</button>
+            
+            <div>
+                <h3>Total Sales: $<span id="total-sales-amount">0.00</span></h3>
+            </div>
+            
+            <table id="sales-table" class="styled-table">
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                        <th>Transaction Date</th>
+                    </tr>
+                </thead>
+                <tbody id="sales-list"></tbody>
+            </table>
+        </section>
+        
+
+        <!-- Customers Section -->
+        <section id="customers" class="page">
+            <h2>Customers</h2>
+            <button onclick="downloadTableAsExcel('customers-table', 'customers')">Download as Excel</button>
+            
+            <div>
+                <h3>Total Customers: <span id="total-customers">0</span></h3>
+            </div>
+            
+            <table id="customers-table" class="styled-table">
+                <thead>
+                    <tr>
+                        <th>User Name</th>
+                        <th>Email</th>
+                        <th>Membership</th>
+                    </tr>
+                </thead>
+                <tbody id="customer-list"></tbody>
+            </table>
+        </section>
+
+
+<section id="analytics" class="page">
+    <h2>Analytics</h2>
+    <div id="analytics-data">
+        <div class="chart-container">
+            <h3>Sales Over Time</h3>
+            <canvas id="analytics-sale1"></canvas>
+        </div>
+        <div class="chart-container">
+            <h3>Inventory Chart</h3>
+            <canvas id="analytics-sale2"></canvas>
+        </div>
+        <div class="chart-container">
+            <h3>Waste Reduction Chart</h3>
+            <canvas id="analytics-sale3"></canvas>
+        </div>
+        <div class="chart-container">
+            <h3>Customer Demographics</h3>
+            <canvas id="Customer-Demographics1"></canvas>
+        </div>
+        <div class="chart-container">
+            <h3>Sales by Region</h3>
+            <canvas id="Sales-by-Region2"></canvas>
+        </div>
+    </div>
+</section>
+
+        <!-- Reports Section -->
+        <section id="reports" class="page">
+            <h2>Reports</h2>
+            <button onclick="generateRevenueReport()">Download Revenue & Loss Report</button>
+            <button onclick="generateInventoryReport()">Download Inventory Report</button>
+            <button onclick="generateWasteReport()">Download Waste Management Report</button>
+            <div id="report-list"></div>
+        </section>
+        
+
+       <!-- User Management Section -->
+<section id="user-management" class="page">
+    <h2>User Management</h2>
+    
+    <!-- Add User Form -->
+    <div id="add-user-form" class="hidden">
+        <h3>Add New User</h3>
+        <form id="user-form">
+            <label for="userName">User Name:</label>
+            <input type="text" id="userName" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="role">Role:</label>
+            <select id="role">
+                <option value="admin">Admin</option>
+                <option value="analyst">Analyst</option>
+                <option value="manager">Manager</option>
+            </select>
+
+            <button type="submit">Add User</button>
+        </form>
+    </div>
+
+    <table id="user-list" class="styled-table">
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Role</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</section>
+
+  </div>
+  
+  <!-- Stat Card Container -->
+  <div id="stat-card-container" class="stats-grid"></div>
+  <script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // Function to toggle the visibility of elements (stat cards or charts)
+function toggleElement(elementId) {
+    const element = document.getElementById(elementId);
+    element.style.display = element.style.display === "none" ? "block" : "none";
+}
+
+// Function to remove a card or graph
+function removeCard(elementId) {
+    document.getElementById(elementId).style.display = "none";
+}
+
+// Function to generate random data for stat cards
+function updateStatCardData() {
+    document.getElementById('average-order-value').textContent = (Math.random() * 130 + 20).toFixed(2);
+    document.getElementById('stock-health').textContent = Math.floor(Math.random() * 50 + 50);
+    document.getElementById('customer-retention').textContent = Math.floor(Math.random() * 30 + 60);
+    document.getElementById('sales-growth').textContent = (Math.random() * 30 - 10).toFixed(2);
+}
+
+// Function to generate Sales chart
+function generateSalesChart() {
+    const ctx = document.getElementById('sales-chart').getContext('2d');
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+            datasets: [{
+                label: 'Sales',
+                data: [12000, 15000, 17000, 14000, 19000, 21000],
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 2
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+}
+
+// Function to generate Customer Demographics chart
+function generateCustomerDemographicsChart() {
+    const ctx = document.getElementById('customer-demographics-chart').getContext('2d');
+    new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: ['18-24', '25-34', '35-44', '45-54', '55+'],
+            datasets: [{
+                data: [20, 35, 25, 10, 10],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true
+        }
+    });
+}
+
+// Function to generate Regional Performance chart
+function generateRegionalPerformanceChart() {
+    const ctx = document.getElementById('regional-performance-chart').getContext('2d');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['North', 'South', 'East', 'West'],
+            datasets: [{
+                label: 'Sales by Region',
+                data: [40000, 35000, 50000, 45000],
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    title: {
+                        display: true,
+                        text: 'Sales ($)'
+                    }
+                }
+            }
+        }
+    });
+}
+
+
+
+
+
+function toggleTaskForm() {
+            document.getElementById('add-task-form').classList.toggle('hidden');
+        }
+
+        
+        function updateTaskList() {
+            const taskList = document.getElementById('task-list');
+            taskList.innerHTML = ''; // Clear current list
+
+            tasks.forEach((task, index) => {
+                const taskElement = document.createElement('div');
+                taskElement.classList.add('task-item');
+                taskElement.innerHTML = `
+                    <h4>${task.taskName}</h4>
+                    <p>Assignee: ${task.taskAssignee}</p>
+                    <p>Due Date: ${task.dueDate}</p>
+                    <button onclick="removeTask(${index})">Remove Task</button>
+                `;
+                taskList.appendChild(taskElement);
+            });
+        }
+
+        function removeTask(index) {
+            tasks.splice(index, 1);
+            updateTaskList(); // Refresh the list
+        }
+
+
+
+
+
+
+
+
+// Initialize charts and additional data on page load
+document.addEventListener('DOMContentLoaded', function() {
+    generateSalesChart();
+    generateCustomerDemographicsChart();
+    generateRegionalPerformanceChart();
+    updateStatCardData();
+});
+
+// Call other initialization functions and dynamic updates
+document.addEventListener('DOMContentLoaded', function() {
+    generateSalesChart();
+    updateTrends();
+    addNotification('Restocked 500 items of Milk.');
+    addActivity('50 orders were processed today.');
+    refreshActivities();
+    updateSalesList();
+    updateCustomerList();
+    updateProductList();
+    updateUserList();
+
+});
+
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.0/jspdf.umd.min.js"></script>
+<script src="customersData.js"></script>
+<script src="salesData.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

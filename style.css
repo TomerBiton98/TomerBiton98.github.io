@@ -433,7 +433,7 @@ header ul li a
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 70%;
 }
 
 form {
@@ -445,9 +445,8 @@ form {
     color: black;
     padding: 24px;
     border-radius: 8px;
-    backdrop-filter: blur(10px); /* Add the glassmorphism effect */
-    background-color: rgba(255, 255, 255, 0.5); /* Set a transparent white background */
-    width: 70%; /* Set the width to 70% of the viewport */
+    height: 80%;
+    width: 100%; /* Set the width to 70% of the viewport */
     max-width: 400px; /* Limit the max width for larger screens */
 }
 

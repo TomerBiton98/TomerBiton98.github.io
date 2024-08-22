@@ -1,18 +1,16 @@
 <html lang="en">
 <head>
-      <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-8VG0LVD9ZP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-8VG0LVD9ZP');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-8VG0LVD9ZP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-8VG0LVD9ZP');
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grabliy</title>
     <link rel="stylesheet" href="style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -22,74 +20,144 @@
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <style>
-        /* Styles for header, navigation, and other elements... */
-
-        .content {
-            padding-top: 100px; /* Add padding to the top of the content */
+        body {
+            overflow-x: hidden;
         }
 
-        .textBox {
-            /* Styles for the text box... */
+        .content {
+            margin-top: 3%;
+            padding-top: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        /* Container for Earth and Orbit */
+        .earth-orbit-container {
+            position: relative;
+            width: 30%;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+
+        /* Earth Image */
+        #earth {
+            width: 100%;
+            height: auto;
+            z-index: 1;
+        }
+
+        /* Orbiting Item Image */
+        .orbit-container {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            animation: rotateOrbit 10s linear infinite;
+            z-index: 2;
+        }
+
+        .orbit-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Rotate Animation */
+        @keyframes rotateOrbit {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .content {
+                flex-direction: column;
+                align-items: center;
+                padding-top: 55px;
+            }
+
+            .earth-orbit-container {
+                width: 35%;
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+                align-items: center;
+                padding-top: 55px;
+            }
+            .earth-orbit-container {
+                width: 40%;
+                margin-top: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content {
+                flex-direction: column;
+                align-items: center;
+                padding-top: 55px;
+            }
+            .earth-orbit-container {
+                width: 50%;
+                margin-top: 20px;
+            }
         }
     </style>
 </head>
-
 <body>
 
     <section>
-
         <header>
-            
-        <a href="index.html"><img src="logo.png" class="logo"></a>
-        <div class="toggle" onclick="toggleMenu();"></div>
-        <ul class="navigation">
-           <li><a href="index.html">Home</a></li>
-            <li><a href="Our Story.html">Our Story</a></li>
-            <li><a href="Waitlist.html">Waitlist</a></li> 
-            <!-- <li><a href="Redeem.html">Redeem</a></li> -->
-            <li><a href="Contact Us.html">Contact Us</a></li>
-        </ul>
+            <a href="index.html"><img src="logo.png" class="logo"></a>
+            <div class="toggle" onclick="toggleMenu();"></div>
+            <ul class="navigation">
+                <li><a href="Our Story.html">Our Story</a></li>
+                <li><a href="Waitlist.html">Waitlist</a></li> 
+                <li><a href="Contact Us.html">Contact Us</a></li>
+                <li><a href="VendorLogIn/login.html">Your Account</a></li>
+            </ul>
         </header>
 
         <div class="content">
             <div class="textBox">
                 <h2>New way of shopping <br> Meet <span>Grabliy</span></h2>
-                <p>Step into the future with Grabliy, where cutting-edge technology meets conscious
-                    shopping.<br> With our AI-powered startup, enjoy unbeatable discounts as a customer, while reducing food
-                    waste and increasing profits as a store owner.<br>
-                    Join us on this transformative journey to a
-                    brighter, sustainable future!</p>
+                <p>Step into the future with Grabliy, where cutting-edge technology meets conscious shopping.<br> 
+                With our AI-powered startup, enjoy unbeatable discounts as a customer, while reducing food waste and 
+                increasing profits as a store owner.<br> Join us on this transformative journey to a brighter, sustainable future!</p>
                 <a href="Waitlist.html">Get Early Access</a>
-                
-                
-                    <!--<p>follow us on social media to learn more.</p>-->
-           </div><ul class="sci">
-               <!-- <li><a href="#"><img src="facebook.png" ></a></li>-->
-                 <!-- <li><a href="#"><img src="twitter.png" ></a></li>-->
-                <!--<li><a href="https://www.instagram.com/official_grabliy/"><img src="instagram.png" ></a></li>-->
-            </ul>
-       <!-- <div class="imgBox">
-        <img src="img1.png" class="info"> 
-        </div>-->
-        </div>
-        </ul>
+            </div>
 
- </section>
+            <!-- Container for Earth and Orbit -->
+            <div class="earth-orbit-container">
+                <img id="earth" src="earth.png" alt="earth-pic">
+                <div class="orbit-container">
+                    <img src="orbit.png" alt="orbit-img">
+                </div>
+            </div>
+        </div> 
+    </section>
 
- <script type="text/javascript"> 
-    function imgSlider(anything){
-        document.querySelector('.info').src = anything;
-    }  
-    function toggleMenu(){
-        var menuToggle = document.querySelector('.toggle')
-        var navigation = document.querySelector('.navigation')
-        menuToggle.classList.toggle('active')
-        navigation.classList.toggle('active')
-    
-    }
-</script>
+    <script type="text/javascript">    
+        function toggleMenu(){
+            var menuToggle = document.querySelector('.toggle')
+            var navigation = document.querySelector('.navigation')
+            menuToggle.classList.toggle('active')
+            navigation.classList.toggle('active')
+        }
+    </script>
 
 </body>
 </html>

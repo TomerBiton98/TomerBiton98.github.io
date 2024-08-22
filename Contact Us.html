@@ -23,6 +23,11 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,  maximum-scale=1.0, user-scalable=no" />
+    <style>
+        #letter{
+            width: 25%;
+        }
+    </style>
 </head>
   
 <body>
@@ -31,22 +36,25 @@
         <a href="index.html"><img src="logo.png" class="logo"></a>
         <div class="toggle" onclick="toggleMenu();"></div>
         <ul class="navigation">
-             <li><a href="index.html">Home</a></li>
+              <!-- <li><a href="index.html">Home</a></li> -->
             <li><a href="Our Story.html">Our Story</a></li>
              <li><a href="Waitlist.html">Waitlist</a></li> 
             <!-- <li><a href="Redeem.html">Redeem</a></li> -->
             <li><a href="Contact Us.html">Contact Us</a></li>
+            <li><a href="VendorLogIn/login.html">Your Account</a></li>
         </ul>
         </header>
   
- <div class="content">
+        <div class="content">
             <div class="textBox">
-                
-                <h2>On social media at</h2>
-                   
-                <a href="https://www.instagram.com/official_grabliy/">@official_grabliy 📸</a>
-       </div>
-  </div>
+                <h2>Contact Us<img id="letter" src="letter.png" alt="letter"></h2>
+        
+                <h1>Reach out with any question</h1>
+        
+                <!-- Use mailto to link to your Gmail -->
+                <a id="demo" href="mailto:tomer.biton98@gmail.com">Request a demo</a>
+            </div>
+        </div>
  
 
  </section>

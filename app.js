@@ -22,3 +22,21 @@ function navSlide() {
 }
 
 navSlide();
+
+let loggedInUser = null;
+
+// Handle login form submission
+document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+
+    // Simple authentication check
+    if (email === 'admin@example.com' && password === 'password') {
+        loggedInUser = { email, role: 'admin' }; // Set logged-in user
+        window.location.href = 'dashboard.html'; // Redirect to dashboard
+    } else {
+        alert('Invalid email or password');
+    }
+});
